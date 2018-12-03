@@ -15,56 +15,56 @@ public final class Stage implements contrat.Stage {
 
     public Stage(String identifiant, String titre, Competence competence, Niveau niveau,
                  contrat.Entreprise entreprise) {
-        this.identifiant = null;
-        this.titre = null;
-        this.competence = null;
-        this.niveau = null;
-        this.entreprise = null;
+        this.identifiant = identifiant;
+        this.titre = titre;
+        this.competence = competence;
+        this.niveau = niveau;
+        this.entreprise = entreprise;
     }
 
 
     @Override
     public String getIdentifiant() {
-        return null;
+        return this.identifiant;
     }
 
     @Override
     public Etudiant getEtudiant() {
-        return null;
+        return this.etudiant;
     }
 
     @Override
     public void setEtudiant(Etudiant etudiant) {
-
+        this.etudiant = etudiant;
     }
 
     @Override
     public String getTitre() {
-        return null;
+        return this.titre;
     }
 
     @Override
     public Competence getCompetence() {
-        return null;
+        return this.competence;
     }
 
     @Override
     public Niveau getNiveau() {
-        return null;
+        return this.niveau;
     }
 
     @Override
     public Entreprise getEntreprise() {
-        return null;
+        return this.entreprise;
     }
 
     @Override
     public Statut getStatut() {
-        return null;
+        return this.statut;
     }
 
     @Override
     public void setStatut(Statut statut) {
-
+        this.statut=statut;
     }
 }

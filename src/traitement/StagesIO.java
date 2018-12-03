@@ -1,5 +1,9 @@
 package traitement;
 
+import model.Entreprise;
+import model.Stage;
+
+import java.io.*;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
@@ -23,7 +27,7 @@ public final class StagesIO {
     /**
      * Représente le chemin du fichier des données stages.
      */
-    private Path stagesFilePath;
+    private Path stagesFilePath
 
 
     public StagesIO(Path etuFilePath, Path stagesFilePath) {
@@ -40,7 +44,29 @@ public final class StagesIO {
      * @throws IOException
      */
     public void chargerDonnees() throws IOException {
+        BufferedReader in = null;
+        try {
+            in = new BufferedReader(new FileReader(String.valueOf(etuFilePath)));
+            String read = null;
+            while ((read = in.readLine()) != null) {
 
+                String[] splited = read.split("#");
+                // OOL MODIFICATION ICI
+                Entreprise entreprise = new Entreprise(splited[4]);
+                for (String part : splited) {
+
+                    System.out.println(part);
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("There was a problem: " + e);
+            e.printStackTrace();
+        } finally {
+            try {
+                in.close();
+            } catch (Exception e) {
+            }
+        }
     }
 
     /**
